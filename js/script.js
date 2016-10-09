@@ -3,47 +3,27 @@
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-prompt('hej');
+var randomNumber = Math.round(Math.random() * quotes.length - 1);
 
 
-
-var quotes = [
+function getRandomQuote() {
     
-    {
-    qoute: 'hej jag heter kalle',
-    source: 'Arvid',
-    citation: 'bok 1',
-    year: 1997        
-    },
-    {
-    qoute: 'test2',
-    source: 'frida',
-    citation: 'bok2',
-    year: 2007    
-    },
-    {
-    qoute: 'test3',
-    source: 'melker',
-    citation:'bok3',
-    year: 2016        
-    },
-    {
-    qoute: 'test4',
-    source: 'per',
-    citation: 'bok4',
-    year: 1991
-    },
-    {
-    qoute: 'test5',
-    source: 'cina',
-    citation: 'bok5',
-    year: 1962
-    },
-    {
-    qoute: 'test6',
-    source: 'gustav',
-    citation: 'bok6',
-    year: 1956
+    for (var i = 0; i < quotes.length; i +=1) { 
+        
+        var displayQuote = quotes[randomNumber].quote;
+        var displaySource = quotes[randomNumber].source;
+        var displayCitation = quotes[randomNumber].citation;
+        var displayYear = quotes[randomNumber].year;
+        
+    		document.getElementById("quote-box").innerHTML = '<p class="quote">' + displayQuote + '</p> <p class="source">' + displaySource + '<span class="citation">' + displayCitation + '</span> <span class="year">' + displayYear + '</span> </p>'; 
+
     }
-];  
+}
+
+
+function printQuote() {
+    getRandomQuote() 
+}
+    
+
 
