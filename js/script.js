@@ -3,7 +3,7 @@
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 //create random number 
-var randomNumber = Math.round(Math.random() * quotes.length - 1);
+var randomNumber = Math.floor(Math.random() * quotes.length);
 
 // loop throug the objects in the array, use the template provivedd to print the qoutes 
 function getRandomQuote() {
@@ -21,7 +21,7 @@ function getRandomQuote() {
 
 //function which used when button pressed
 function printQuote() {
-    getRandomQuote() 
+    getRandomQuote(); 
 }
     
 
