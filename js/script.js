@@ -2,11 +2,14 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-//create random number 
-var randomNumber = Math.floor(Math.random() * quotes.length);
+
 
 // loop throug the objects in the array, use the template provivedd to print the qoutes 
 function getRandomQuote() {
+    
+    //Important this is in the function to get diffrent random numbers everytime the button is clicked. 
+    var randomNumber = Math.floor(Math.random() * quotes.length);
+    console.log(randomNumber);
     
     for (var i = 0; i < quotes.length; i +=1) { 
         
@@ -25,4 +28,3 @@ function printQuote() {
 }
     
 
-// I havent managed to get the code run several times after pushing the "button" - so what happens is that just one qoutes shows up.
